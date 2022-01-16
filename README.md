@@ -25,3 +25,11 @@ cmake ..
 make
 ```
 
+### It won't build, and code seems to be missing
+This is most likely because you skipped the README, went straight to the green Code button, used the URL that it gave you to clone the repository.  That's OK, these things happen.
+
+To fix this, go into the avr\_analog\_input directory, and do the following.
+```sh
+git submodule init
+git submodule update
+```
