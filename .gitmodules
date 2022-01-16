@@ -1,0 +1,6 @@
+[submodule "lib/avr_lcd_lib"]
+	path = lib/avr_lcd_lib
+	url = https://github.com/slink007/avr_lcd_lib.git
+[submodule "lib/avr_a2d_lib"]
+	path = lib/avr_a2d_lib
+	url = https://github.com/slink007/avr_a2d_lib.git
