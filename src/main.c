@@ -20,7 +20,7 @@ int main(void)
     {
         adCount = ad_read(port);                 // get raw A-to-D count
         itoa(adCount, number, 10);               // convert count to string
-        position = lcd_text(row, 1, " Count: ");        
+        position = lcd_text(row, 1, "Count: ");        
         lcd_text(row, position + 1, number);
         
         /* 
@@ -31,12 +31,13 @@ int main(void)
          voltage = (double)adCount * 0.0049;
 
          /*
-            Reserve 5 characters of space to store the voltage.
-            Use 2 digits of precision after the decimal.  First
-            character will be reserved and used for minus sign if
-            voltage is negative.
+            The dtostrf function reserves the first character for the sign.
+            On positive numbers that is left empty.  This causes the number
+            to be displayed 1 character too far to the right.  We'll put in a
+            '+' sign so everything lines up. 
          */
          dtostrf(voltage, 5, 2, number);
+         number[0] = '+';
 
          row = SECOND;
          position = lcd_text(row, 1, number);
