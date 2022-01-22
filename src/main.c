@@ -28,19 +28,10 @@ int main(void)
            The Vref = 5V
            Step size = 5V / 1024 steps or approx. 0.0049 V/step
         */
-         voltage = (double)adCount * 0.0049;
-
-         /*
-            The dtostrf function reserves the first character for the sign.
-            On positive numbers that is left empty.  This causes the number
-            to be displayed 1 character too far to the right.  We'll put in a
-            '+' sign so everything lines up. 
-         */
-         dtostrf(voltage, 5, 2, number);
-         number[0] = '+';
+         voltage = (float)adCount * 0.0049;
 
          row = SECOND;
-         position = lcd_text(row, 1, number);
+         position = lcd_float(row, 1, 2, voltage);
          lcd_text(row, position + 1, " V");
          row = FIRST;
         _delay_ms(1000);
