@@ -38,3 +38,7 @@ git submodule update
 ### Simulation
 If you want to experiment with this code, and you don't happen to have an Atmega32 or a LCD, you can try using simulation.
 [SimulIDE](https://www.simulide.com/p/home.html) is a basic circuit simulator program.  It includes some microcontrollers in its libraries, and the Atmega32 is one of the ones it supports.  You can create a circuit and then load the .hex file (found in the build folder).
+
+
+### Final Thoughts
+This was my first, and hopefully last, time using git submodules.  They seem like a really good idea at the beginning, but the hoops you have to jump through when updating make it clumsy to keep even this small project updated.  I can't imagine the horrors of using it on a large project.
